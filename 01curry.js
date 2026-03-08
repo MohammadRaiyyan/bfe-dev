@@ -12,7 +12,7 @@ function curry(fn) {
       return fn.apply(this, args);
     } else {
       return function (...nextArgs) {
-        return curried(...args, ...nextArgs);
+        return curried.apply(this, [...args, ...nextArgs]);
       };
     }
   };
